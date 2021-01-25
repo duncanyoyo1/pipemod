@@ -13,5 +13,8 @@ You will find these files in the [Completed Files](Completed_Files) directory.
 
 ![Pipemod1](img/Pipemod1.png)
 ![Pipemod2](img/Pipemod2.png)
+![Pipemod3](img/Pipemod3.png)
+![Pipemod4](img/Pipemod4.png)
+![Pipemod5](img/Pipemod5.png)
 =======
 A 3D Printed Pipe Mod
