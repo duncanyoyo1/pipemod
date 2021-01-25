@@ -2,8 +2,8 @@ include <BOSL/constants.scad>
 use <BOSL/masks.scad>
 use <BOSL/transforms.scad>
 
-$fa = 0.1; // Set these to 1 for faster preview.
-$fs = 0.1; // ----------------------------------
+$fa = 1; // Set these to 1 for faster preview.
+$fs = 1; // ----------------------------------
 fudge=0.1;
 
 module pipe_body () {
@@ -21,6 +21,7 @@ module pipe_body () {
         cube([3,1,2], center=true);
         translate([-26,4.5,17.75])
         cube([3,1,2], center=true);
+        cap_stopper();
         // Add cap stoppers ( 3 cubes )
     difference(){
         translate([0,0,50])
@@ -43,8 +44,7 @@ module pipe_body () {
         translate([25.5,0,8])
         cylinder(d=3.75, h=90);
     }
-    translate([26.5,0,45])
-    battery_sled_holder();
+        battery_sled_holder();
   }  
 }
 module fire_button (){
@@ -430,9 +430,9 @@ module bend(size=[50,20,2],angle=45,radius=10,center=false, flatten=false){
   }
 }
 module battery_sled_holder(){
-    translate([0,0,0])
+    translate([26.5,0,46.25])
     difference(){
-    cube([5,5,90], center=true);
+    cube([5,5,91.75], center=true);
     translate([-1,0,-36])
     cylinder(d=3.75, h=90);
     
@@ -460,19 +460,25 @@ module battery_sled(){
     cylinder(r=3, h=10);
  }
 }
+module cap_stopper(){
+        translate([0,26,89.6])
+        cube([2,2,5], center=true);
+        translate([0,-26,89.6])
+        cube([2,2,5], center=true);
+}
 pipe_body();
 pipe_stem();
-pipe_cap();
-fire_button();
-up_down_button();
-DNA60();
-DNA60_Mount();
+//pipe_cap();
+//fire_button();
+//up_down_button();
+//DNA60();
+//DNA60_Mount();
 DNA60_Screen();
 DNA60_Internal();
-translate([1.5,0,-1])
-battery_21700();
-rotate([0,0,180])
-translate([0,-27,3.55])
-mUSB();
-translate([25,0,20])
-battery_sled();
+//translate([1.5,0,-1])
+//battery_21700();
+//rotate([0,0,180])
+//translate([0,-27,3.55])
+//mUSB();
+//translate([25,0,20])
+//battery_sled();
