@@ -442,8 +442,8 @@ module battery_sled(){
     difference(){
     union(){
     cylinder(d=3.5, h=80);
-    translate([-2,0,40])
-    cube([2,2,75], center=true);
+    translate([-2,0,40.5])
+    #cube([2,2,75], center=true);
     translate([-11,0,40.5])
     cube([18,24,75], center=true);
     }
@@ -465,19 +465,19 @@ module cap_stopper(){
         translate([0,-26,89.6])
         cube([2,2,5], center=true);
 }
-pipe_body();
-pipe_stem();
+//pipe_body();
+//pipe_stem();
 //pipe_cap();
 //fire_button();
 //up_down_button();
 //DNA60();
 //DNA60_Mount();
-DNA60_Screen();
-DNA60_Internal();
+//DNA60_Screen();
+//DNA60_Internal();
 //translate([1.5,0,-1])
 //battery_21700();
 //rotate([0,0,180])
 //translate([0,-27,3.55])
 //mUSB();
 //translate([25,0,20])
-//battery_sled();
+battery_sled();
