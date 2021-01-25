@@ -9,7 +9,7 @@ Currently you only need to print 5 files.
 
 The main body, the fire, up and down buttons, the cap, and the battery sled.
 
-You will find these files in the [Completed Files](pipemod/tree/main/Completed\ Files) directory.
+You will find these files in the [Completed Files](pipemod/tree/main/Completed Files) directory.
 
 ![Pipemod1](img/Pipemod1.png)
 ![Pipemod2](img/Pipemod2.png)
