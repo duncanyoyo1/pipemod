@@ -22,7 +22,6 @@ module pipe_body () {
         translate([-26,4.5,17.75])
         cube([3,1,2], center=true);
         cap_stopper();
-        // Add cap stoppers ( 3 cubes )
     difference(){
         translate([0,0,50])
         cylinder(h=100,r=30,center=true);
