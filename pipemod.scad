@@ -387,7 +387,7 @@ module mUSB(){
 }
 module mUSB_hole(){
     translate([0,28,4.75])
-    fillet(fillet=1.5, size=[8.5,10,3], $fn=24) {
+    fillet(fillet=1.5, size=[8.5,10,3], $fn=64) {
     cube(size=[8.5,10,3], center=true);
  }
 }
