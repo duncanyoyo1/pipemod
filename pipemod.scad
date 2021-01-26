@@ -218,8 +218,8 @@ module DNA60_Internal (){
  }
 }
 module battery_21700 () {
-translate([10,0,15])
-cylinder(h=72,d=21);
+translate([10,0,15.5])
+cylinder(h=70.5,d=21);
 }
 module mUSB(){
   //usb.org CabConn20.pdf
@@ -440,16 +440,17 @@ module battery_sled(){
     translate([0.5,0,-10.75])
     difference(){
     union(){
+    translate([0,0,0.5])
     cylinder(d=3.5, h=80);
     translate([-2,0,40.5])
-    cube([2,2,75], center=true);
+    cube([2,2,78], center=true);
     translate([-11,0,40.5])
-    cube([18,24,75], center=true);
+    cube([18,24,78], center=true);
     }
-    translate([-23,0,-10.5])
-    battery_21700();
+    translate([-13.5,0,3])
+    cylinder(h=75,d=21);
     translate([-24,0,40.5])
-    cube([21,21,72], center=true);
+    cube([21,21,75], center=true);
     translate([-10,-7,7.5])
     rotate([0,90,0])
     cylinder(r=3, h=10);
@@ -465,20 +466,20 @@ module cap_stopper(){
         cube([2,2,5], center=true);
 }
 union(){
-pipe_body();
-pipe_stem();
+//pipe_body();
+//pipe_stem();
 //pipe_cap();
 //fire_button();
 //up_down_button();
 //DNA60();
 //DNA60_Mount();
-DNA60_Screen();
-DNA60_Internal();
+//DNA60_Screen();
+//DNA60_Internal();
 //translate([1.5,0,-1])
 //battery_21700();
 //rotate([0,0,180])
 //translate([0,-27,3.55])
 //mUSB();
-//translate([25,0,20])
-//battery_sled();
+translate([25,0,20])
+battery_sled();
 }
