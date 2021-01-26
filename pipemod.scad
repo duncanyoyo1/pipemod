@@ -208,7 +208,7 @@ module DNA60_Internal (){
         translate([-0.5,0,0])
         rotate([90,0,90])
         cube([6,10,24], center=true);
-        translate([-1.5,0,10])
+        translate([-1.5,-1,10])
         rotate([90,0,90])
         cube([11.6,18,32], center=true);
         translate([-16,0,4])
