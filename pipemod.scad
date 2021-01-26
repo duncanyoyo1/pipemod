@@ -141,7 +141,7 @@ module standoff (){
        rotate([90,0,0])
        difference () {
        cylinder(r=1,h=2.5,center=true);
-       cylinder(r=0.4,h=3,center=true);
+       cylinder(r=0.5,h=3,center=true);
  }
 }
 module DNA60_Mount () {
@@ -434,7 +434,6 @@ module battery_sled_holder(){
     cube([5,5,91.75], center=true);
     translate([-1,0,-36])
     cylinder(d=3.75, h=90);
-    
     }
 }
 module battery_sled(){
@@ -443,7 +442,7 @@ module battery_sled(){
     union(){
     cylinder(d=3.5, h=80);
     translate([-2,0,40.5])
-    #cube([2,2,75], center=true);
+    cube([2,2,75], center=true);
     translate([-11,0,40.5])
     cube([18,24,75], center=true);
     }

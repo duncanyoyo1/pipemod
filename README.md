@@ -5,9 +5,9 @@ This repository will contain the OpenSCAD files as well as STL/AMF exports of th
 
 My focus was on keeping the number of parts down.
 
-Currently you only need to print 5 files.
+Currently you only need to print 6 files.
 
-The main body, the fire, up and down buttons, the cap, and the battery sled.
+The main body, the fire, up and down buttons, the cap, the battery sled, and the DNA60 sled.
 
 You will find these files in the [Completed Files](Completed_Files) directory.
 
