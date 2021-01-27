@@ -436,7 +436,7 @@ module bend(size=[50,20,2],angle=45,radius=10,center=false, flatten=false){
 }
 module battery_sled_holder(){
     translate([26.5,0,46.25])
-    difference(){
+    difference(){    
     cube([5,5,91.75], center=true);
     translate([-1,0,-36])
     cylinder(d=3.75, h=90);
@@ -450,7 +450,7 @@ module battery_sled(){
     cylinder(d=3.5, h=80);
     translate([-2,0,40.5])
     cube([2,2,78], center=true);
-    translate([-11,0,40.5])
+    translate([-10.75,0,40.5])
     cube([18,24,78], center=true);
     }
     translate([-13.5,0,3])
@@ -461,6 +461,12 @@ module battery_sled(){
     rotate([0,90,0])
     cylinder(r=3, h=15);
     translate([-15,-7.75,75])
+    rotate([0,90,0])
+    cylinder(r=3, h=15);
+    translate([-15,7.75,6])
+    rotate([0,90,0])
+    cylinder(r=3, h=15);
+    translate([-15,7.75,75])
     rotate([0,90,0])
     cylinder(r=3, h=15);
  }
@@ -474,19 +480,18 @@ module cap_stopper(){
 union(){
 pipe_body();
 pipe_stem();
-//pipe_cap();
-//fire_button();
-//up_down_button();
-//DNA60();
+pipe_cap();
+fire_button();
+up_down_button();
+DNA60();
 DNA60_Mount();
 DNA60_Screen();
-//DNA60_Internal();
-//translate([1.5,0,-1])
-//battery_21700();
-//rotate([0,0,180])
-//translate([0,-27,3.55])
-//mUSB();
-//translate([25,0,20])
-//battery_sled();
-//cap_stopper();
+DNA60_Internal();
+translate([1.5,0,-1])
+battery_21700();
+rotate([0,0,180])
+translate([0,-27,3.55])
+mUSB();
+translate([25,0,20])
+battery_sled();
 }
