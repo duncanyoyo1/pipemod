@@ -448,15 +448,15 @@ module battery_sled(){
     cube([18,24,78], center=true);
     }
     translate([-13.5,0,3])
-    cylinder(h=75,d=21);
+    cylinder(h=75,d=22);
     translate([-24,0,40.5])
-    cube([21,21,75], center=true);
-    translate([-10,-7,7.5])
+    cube([21,22,75], center=true);
+    translate([-15,-7.75,6])
     rotate([0,90,0])
-    cylinder(r=3, h=10);
-    translate([-10,-7,73.5])
+    cylinder(r=3, h=15);
+    translate([-15,-7.75,75])
     rotate([0,90,0])
-    cylinder(r=3, h=10);
+    cylinder(r=3, h=15);
  }
 }
 module cap_stopper(){
