@@ -4,7 +4,7 @@ use <BOSL/transforms.scad>
 
 $fa = 0.1; // Set these to 1 for faster preview.
 $fs = 0.1; // ----------------------------------
-fudge=0.1;
+fudge=0.1; // Don't change this value
 
 module pipe_body () {
     union(){
@@ -471,18 +471,18 @@ module cap_stopper(){
 union(){
 pipe_body();
 pipe_stem();
-pipe_cap();
-fire_button();
-up_down_button();
-DNA60();
-DNA60_Mount();
+//pipe_cap();
+//fire_button();
+//up_down_button();
+//DNA60();
+//DNA60_Mount();
 DNA60_Screen();
 DNA60_Internal();
-translate([1.5,0,-1])
-battery_21700();
-rotate([0,0,180])
-translate([0,-27,3.55])
-mUSB();
-translate([25,0,20])
-battery_sled();
+//translate([1.5,0,-1])
+//battery_21700();
+//rotate([0,0,180])
+//translate([0,-27,3.55])
+//mUSB();
+//translate([25,0,20])
+//battery_sled();
 }
