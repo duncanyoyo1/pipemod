@@ -3,7 +3,7 @@
 
 This repository will contain the OpenSCAD files as well as STL/AMF exports of the parts needed to actually print the mod yourself.
 
-My focus was on keeping the number of parts down.
+My focus was on keeping the number of parts down while keeping the outside of the mod as clean as possible.
 
 Currently you only need to print 6 files.
 
