@@ -140,7 +140,7 @@ module pipe_cap () {
     translate([0,0,94.64])
     difference(){
     cylinder(h=5,r=27,center=true);
-    up(5) fillet_cylinder_mask(r=27, fillet=8); 
+    up(5.25) fillet_cylinder_mask(r=27, fillet=8); 
  }
 }
 module standoff (){
@@ -450,8 +450,8 @@ module battery_sled(){
     cylinder(d=3.5, h=80);
     translate([-2,0,40.5])
     cube([2,2,78], center=true);
-    translate([-10.75,0,40.5])
-    cube([18,24,78], center=true);
+    translate([-13.6,0,40.5])
+    cube([24,24.5,78], center=true);
     }
     translate([-13.5,0,3])
     cylinder(h=75,d=22);
@@ -469,6 +469,9 @@ module battery_sled(){
     translate([-15,7.75,75])
     rotate([0,90,0])
     cylinder(r=3, h=15);
+    translate([-72,0,40.5])
+    rotate([90,0,0])
+    cylinder(r=60, h=30, center=true);
  }
 }
 module cap_stopper(){
@@ -478,20 +481,20 @@ module cap_stopper(){
         cube([2,4,5], center=true);
 }
 union(){
-pipe_body();
-pipe_stem();
-pipe_cap();
-fire_button();
-up_down_button();
-DNA60();
-DNA60_Mount();
-DNA60_Screen();
-DNA60_Internal();
-translate([1.5,0,-1])
-battery_21700();
-rotate([0,0,180])
-translate([0,-27,3.55])
-mUSB();
+//pipe_body();
+//pipe_stem();
+//pipe_cap();
+//fire_button();
+//up_down_button();
+//DNA60();
+//DNA60_Mount();
+//DNA60_Screen();
+//DNA60_Internal();
+//translate([1.5,0,-1])
+//battery_21700();
+//rotate([0,0,180])
+//translate([0,-27,3.55])
+//mUSB();
 translate([25,0,20])
 battery_sled();
 }
