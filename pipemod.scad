@@ -451,27 +451,33 @@ module battery_sled(){
     translate([-2,0,40.5])
     cube([2,2,78], center=true);
     translate([-13.6,0,40.5])
-    cube([24,24.5,78], center=true);
+    cube([24,24.5,80], center=true); // fix
     }
-    translate([-13.5,0,3])
-    cylinder(h=75,d=22);
+    translate([-13.5,0,1.5])
+    cylinder(h=78,d=22);
     translate([-24,0,40.5])
-    cube([21,22,75], center=true);
-    translate([-15,-7.75,6])
+    cube([21,22,78], center=true);
+    translate([-15,-7.75,4.5])
     rotate([0,90,0])
-    cylinder(r=3, h=15);
-    translate([-15,-7.75,75])
+    cylinder(r=3, h=15); // fix
+    translate([-15,-7.75,76.5])
     rotate([0,90,0])
-    cylinder(r=3, h=15);
-    translate([-15,7.75,6])
+    cylinder(r=3, h=15); // fix
+    translate([-15,7.75,4.5])
     rotate([0,90,0])
-    cylinder(r=3, h=15);
-    translate([-15,7.75,75])
+    cylinder(r=3, h=15); // fix
+    translate([-15,7.75,76.5])
     rotate([0,90,0])
-    cylinder(r=3, h=15);
+    cylinder(r=3, h=15); // fix
     translate([-72,0,40.5])
     rotate([90,0,0])
     cylinder(r=60, h=30, center=true);
+    translate([-10,0,1.5])
+    rotate([0,0,0])
+    cube([14,6.35,1], center=true);
+    translate([-10,0,79.5])
+    rotate([0,0,0])
+    cube([14,6.35,1], center=true);
  }
 }
 module cap_stopper(){
@@ -480,7 +486,7 @@ module cap_stopper(){
         translate([0,-26,89.6])
         cube([2,4,5], center=true);
 }
-union(){
+//union(){
 //pipe_body();
 //pipe_stem();
 //pipe_cap();
@@ -497,4 +503,4 @@ union(){
 //mUSB();
 translate([25,0,20])
 battery_sled();
-}
+//}
