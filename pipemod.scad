@@ -146,9 +146,12 @@ module pipe_cap () {
 module standoff (){
        rotate([90,0,0])
        difference () {
-       cylinder(r=1,h=2.5,center=true);
-       cylinder(r=0.6,h=3,center=true);
+       cylinder(r=1.15,h=2.5,center=true);
+       cylinder(r=0.625,h=3,center=true);
  }
+}
+module HexNut (){
+ cylinder(r=2.25, h=2, $fn=6);   
 }
 module DNA60_Mount () {
     rotate([0,0,-90])
@@ -157,26 +160,53 @@ module DNA60_Mount () {
         difference() {
         translate([0.15,0,0])
         cube([22,5,34],center=true);
-        translate([3.6,-1.25,-2.25])
+        translate([3.4,-1.25,-2.25])
         cube([9.25,5,22.5],center=true);
+        translate([9.21,-0.5,9.4])
+        rotate([90,0,0])
+        cylinder(r=0.7,h=6,center=true);
+        translate([-9.15,-0.5,9.4])
+        rotate([90,0,0])
+        cylinder(r=0.7,h=6,center=true);
+        translate([9.225,-0.5,-3.5])
+        rotate([90,0,0])
+        cylinder(r=0.7,h=6,center=true);
+        translate([-9.15,-0.5,-3.5])
+        rotate([90,0,0])
+        cylinder(r=0.7,h=6,center=true);
+        translate([9.21,3.5,9.4])
+        rotate([90,90,0])
+        HexNut();
+        translate([-9.15,3.5,9.4])
+        rotate([90,90,0])
+        HexNut();
+        translate([9.225,3.5,-3.5])
+        rotate([90,90,0])
+        HexNut();
+        translate([-9.15,3.5,-3.5])
+        rotate([90,90,0])
+        HexNut();
         }
-       translate([9.1,-3,14])
-       standoff();
-       translate([-9.1,-3,14])
-       standoff();
-       translate([9.15,-3,9.4])
-       standoff();
-       translate([-9.15,-3,9.4])
-       standoff();
-       translate([9.225,-3,-3.5])
-       standoff();
-       translate([-9.15,-3,-3.5])
-       standoff();
-       translate([-9.1,-3,-14])
-       standoff();
-       translate([9.1,-3,-14])
-       standoff();
-
+        translate([9.58,-3,13.5])
+        cube([2.5,2.5,6.5], center=true);
+        translate([9.58,-3,3])
+        cube([2.5,2.5,11], center=true);
+        translate([9.58,-3,-10.55])
+        cube([2.5,2.5,12.5], center=true);
+        translate([-9.4,-3,13.5])
+        cube([2.5,2.5,6.5], center=true);
+        translate([-9.4,-3,3])
+        cube([2.5,2.5,11], center=true);
+        translate([-9.4,-3,-10.55])
+        cube([2.5,2.5,12.5], center=true);
+       //translate([9.21,-3,9.4])
+       //standoff();
+       //translate([-9.15,-3,9.4])
+       //standoff();
+       //translate([9.15,-3,-3.5])
+       //standoff();
+       //translate([-9.15,-3,-3.5])
+       //standoff();
  }
 }
 
@@ -446,36 +476,36 @@ module battery_sled(){
     translate([0.5,0,-10.75])
     difference(){
     union(){
-    translate([0,0,0.5])
-    cylinder(d=3.5, h=80);
+    translate([0,0,0])
+    cylinder(d=3.5, h=81);
     translate([-2,0,40.5])
-    cube([2,2,78], center=true);
+    cube([2,2,81], center=true);
     translate([-13.6,0,40.5])
-    cube([24,24.5,80], center=true); // fix
+    cube([24,24.5,81], center=true); // fix
     }
-    translate([-13.5,0,1.5])
-    cylinder(h=78,d=22);
+    translate([-13.5,0,2])
+    cylinder(h=77,d=22);
     translate([-24,0,40.5])
-    cube([21,22,78], center=true);
-    translate([-15,-7.75,4.5])
+    cube([21,22,77], center=true);
+    translate([-15,-7.75,5])
     rotate([0,90,0])
     cylinder(r=3, h=15); // fix
-    translate([-15,-7.75,76.5])
+    translate([-15,-7.75,76])
     rotate([0,90,0])
     cylinder(r=3, h=15); // fix
-    translate([-15,7.75,4.5])
+    translate([-15,7.75,5])
     rotate([0,90,0])
     cylinder(r=3, h=15); // fix
-    translate([-15,7.75,76.5])
+    translate([-15,7.75,76])
     rotate([0,90,0])
     cylinder(r=3, h=15); // fix
     translate([-72,0,40.5])
     rotate([90,0,0])
     cylinder(r=60, h=30, center=true);
-    translate([-10,0,1.5])
+    translate([-10,0,2])
     rotate([0,0,0])
     cube([14,6.35,1], center=true);
-    translate([-10,0,79.5])
+    translate([-10,0,79])
     rotate([0,0,0])
     cube([14,6.35,1], center=true);
  }
@@ -486,14 +516,14 @@ module cap_stopper(){
         translate([0,-26,89.6])
         cube([2,4,5], center=true);
 }
-//union(){
+union(){
 //pipe_body();
 //pipe_stem();
 //pipe_cap();
 //fire_button();
 //up_down_button();
 //DNA60();
-//DNA60_Mount();
+DNA60_Mount();
 //DNA60_Screen();
 //DNA60_Internal();
 //translate([1.5,0,-1])
@@ -501,6 +531,6 @@ module cap_stopper(){
 //rotate([0,0,180])
 //translate([0,-27,3.55])
 //mUSB();
-translate([25,0,20])
-battery_sled();
-//}
+//translate([25,0,20])
+//battery_sled();
+}
