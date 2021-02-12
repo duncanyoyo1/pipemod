@@ -164,16 +164,16 @@ module DNA60_Mount () {
         cube([9.25,5,22.5],center=true);
         translate([9.21,-0.5,9.4])
         rotate([90,0,0])
-        cylinder(r=0.7,h=6,center=true);
+        cylinder(r=0.675,h=6,center=true);
         translate([-9.15,-0.5,9.4])
         rotate([90,0,0])
-        cylinder(r=0.7,h=6,center=true);
+        cylinder(r=0.675,h=6,center=true);
         translate([9.225,-0.5,-3.5])
         rotate([90,0,0])
-        cylinder(r=0.7,h=6,center=true);
+        cylinder(r=0.675,h=6,center=true);
         translate([-9.15,-0.5,-3.5])
         rotate([90,0,0])
-        cylinder(r=0.7,h=6,center=true);
+        cylinder(r=0.675,h=6,center=true);
         translate([9.21,3.5,9.4])
         rotate([90,90,0])
         HexNut();
@@ -282,7 +282,6 @@ module mUSB(){
   I= 1.3;   //Pin2-4 separation
   conWdth= 0.37; //# contact width
   
-  
   conThck= 0.1; //contact thickness
   
   //JAE DX4R005J91
@@ -296,7 +295,6 @@ module mUSB(){
   flpDimSide=[0.75,flpLngth,t];
   
   flpAng=40;
-  
   
   THT_OZ=-(5-1.8);
   legDim=[0.9,0.65-r/2,t];
@@ -335,7 +333,6 @@ module mUSB(){
         translate([ix,-W/2-1-t,-X+t+N-(conThck)/2]) 
           cube([conWdth,W-fudge,conThck],true); 
      }
-   
      
     //plastics
     color("darkSlateGrey")
@@ -346,8 +343,7 @@ module mUSB(){
               translate([ix*(M/2-r),iy*(N/2-r)]) cylinder(r=r-0.01, h=1);
     color("darkSlateGrey")
        translate([0,-W/2-1-t,-X/2+t+N-U]) plastic();     
-          
-          
+                
     //metal-body with cutouts
     color("silver"){
       difference(){
@@ -420,13 +416,6 @@ module mUSB(){
    }
   }
  pcb();
-}
-module mUSB_hole(){
-    translate([0,28,4.75])
-    fillet(fillet=1.5, size=[8.5,10,3], $fn=64) {
-    cube(size=[8.5,10,3], center=true);
- }
-}
 module bend(size=[50,20,2],angle=45,radius=10,center=false, flatten=false){
   alpha=angle*PI/180; //convert in RAD
   strLngth=abs(radius*alpha);
@@ -463,6 +452,13 @@ module bend(size=[50,20,2],angle=45,radius=10,center=false, flatten=false){
         rotate_extrude(angle=angle) 
           translate([radius,0,0]+bendOffset1) square([size.z,size.x]);
   }
+}
+}
+module mUSB_hole(){
+    translate([0,28,4.75])
+    fillet(fillet=1.5, size=[8.5,10,3], $fn=64) {
+    cube(size=[8.5,10,3], center=true);
+ }
 }
 module battery_sled_holder(){
     translate([26.5,0,46.25])
