@@ -46,6 +46,33 @@ module pipe_body () {
         battery_sled_holder();
   }  
 }
+module pipe_stem () {
+    union(){
+    difference(){
+        rotate([75,0,0])
+        translate([0,23,59])
+        cylinder(h=4,d=27);
+        rotate([75,0,0])
+        translate([0,23,55])
+        cylinder(h=10,d=10);
+        rotate([75,0,0])
+        translate([0,23,62])
+        cylinder(h=2,d=22.25);
+    }
+    difference(){
+    rotate([75,0,0])
+        translate([0,23,20])
+        cylinder(h=45,r=15);
+        translate([0,-50,37.21])
+        rotate([75,0,0])
+        up(10) fillet_cylinder_mask(r=15, fillet=10);
+        rotate([75,0,0])
+        translate([0,23,15])
+        cylinder(h=55,d=26);
+        cylinder(h=120,r=30,center=true);
+  }
+ }
+}
 module fire_button (){
     translate([-28,0,36])
     rotate([0,90,0])
@@ -108,33 +135,6 @@ module up_down_button_hole (){
         rotate([0,90,0])
         translate([-13.25,-5.75,-26])
         cylinder(d=5, h=10, center=true);
-}
-module pipe_stem () {
-    union(){
-    difference(){
-        rotate([75,0,0])
-        translate([0,23,59])
-        cylinder(h=4,d=27);
-        rotate([75,0,0])
-        translate([0,23,55])
-        cylinder(h=10,d=10);
-        rotate([75,0,0])
-        translate([0,23,62])
-        cylinder(h=2,d=22.25);
-    }
-    difference(){
-    rotate([75,0,0])
-        translate([0,23,20])
-        cylinder(h=45,r=15);
-        translate([0,-50,37.21])
-        rotate([75,0,0])
-        up(10) fillet_cylinder_mask(r=15, fillet=10);
-        rotate([75,0,0])
-        translate([0,23,15])
-       cylinder(h=55,d=25.5);
-        cylinder(h=120,r=30,center=true);
-  }
- }
 }
 module pipe_cap () {
     translate([0,0,94.64])
@@ -513,15 +513,15 @@ module cap_stopper(){
         cube([2,4,5], center=true);
 }
 union(){
-//pipe_body();
-//pipe_stem();
+pipe_body();
+pipe_stem();
 //pipe_cap();
 //fire_button();
 //up_down_button();
 //DNA60();
-DNA60_Mount();
-//DNA60_Screen();
-//DNA60_Internal();
+//DNA60_Mount();
+DNA60_Screen();
+DNA60_Internal();
 //translate([1.5,0,-1])
 //battery_21700();
 //rotate([0,0,180])
