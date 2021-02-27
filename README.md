@@ -30,6 +30,7 @@ You will find these files in the [Completed Files](Completed_Files) directory.
 ![Pipemod3](img/Pipemod3.png)
 ![Pipemod4](img/Pipemod4.png)
 ![Pipemod5](img/Pipemod5.png)
+![Pipemod6](img/Pipemod6.png)
 
 =======
 A 3D Printed Pipe Mod for the DNA60 Chipset from [Evolv](https://evolvapor.com)
