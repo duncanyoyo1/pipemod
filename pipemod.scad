@@ -39,7 +39,7 @@ module pipe_body () {
         cylinder(h=100,r=27,center=true);
         translate([-0.5,0,0])
         rotate([90,0,90])
-        cube([6,10,24], center=true);
+        #cube([6,10,24], center=true);
         translate([25.5,0,8])
         cylinder(d=3.75, h=90);
     }
@@ -514,14 +514,14 @@ module cap_stopper(){
 }
 union(){
 pipe_body();
-pipe_stem();
+//pipe_stem();
 //pipe_cap();
 //fire_button();
 //up_down_button();
 //DNA60();
 //DNA60_Mount();
-DNA60_Screen();
-DNA60_Internal();
+//DNA60_Screen();
+//DNA60_Internal();
 //translate([1.5,0,-1])
 //battery_21700();
 //rotate([0,0,180])
